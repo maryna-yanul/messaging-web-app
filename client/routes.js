@@ -14,3 +14,4 @@ MainController = RouteController.extend({
   	});
   }
 });
+Router.route('/posts', {name: 'postsViews'});

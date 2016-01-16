@@ -1,3 +1,6 @@
 standard-app-packages
 iron:router
 twbs:bootstrap
+enteye:spinner
+fortawesome:fontawesome
+less
