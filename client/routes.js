@@ -14,4 +14,8 @@ MainController = RouteController.extend({
   	});
   }
 });
-Router.route('/posts', {name: 'postsViews'});
+Router.route('/login', {name: 'userloginView'});
+Router.route('/registration', {name: 'userregistrationView'});
+
+
+

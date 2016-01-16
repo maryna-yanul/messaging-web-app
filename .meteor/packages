@@ -4,3 +4,6 @@ twbs:bootstrap
 enteye:spinner
 fortawesome:fontawesome
 less
+email
+accounts-base
+accounts-password
