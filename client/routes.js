@@ -16,6 +16,9 @@ MainController = RouteController.extend({
 });
 Router.route('/login', {name: 'userloginView'});
 Router.route('/registration', {name: 'userregistrationView'});
+Router.route('/profile', {name: 'profileView'});
+
+
 
 
 
