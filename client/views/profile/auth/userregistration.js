@@ -24,7 +24,7 @@ Template.userregistrationView.events({
                     console.log(err);
                     $error.text(err.reason);
                 } else{
-                    Router.go('/home');
+                    Router.go('/');
                 }
             });
         } else {
