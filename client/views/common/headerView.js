@@ -1,8 +1,8 @@
-Template.home.helpers({
+Template.headerView.helpers({
   
 });
 
-Template.home.events({
+Template.headerView.events({
 	'click .pushMessage': function(e){
         e.preventDefault();
 		Router.go('profileView');

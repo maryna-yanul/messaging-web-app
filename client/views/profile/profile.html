@@ -5,10 +5,41 @@
 			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
 				<img src="/images/10.png" alt="photo" class="img-circle">
 			</div>
+
+			
+{{#if editProfile}}
 			<div class="col-lg-9 col-md-9 col-sm-6 col-xs-6">
-				<h2>Maryna Yanul</h2>
-				<small>Lviv</small>
+				<input type="text" name="username" value="{{currentUser.profile.username}}">
+				<input type="text" name="emails" value="{{currentUser.emails}}">
+				<input type="text" name="username" value="{{currentUser.profile.username}}">
+				<a href="#" class="save-data"><i class="fa fa-floppy-o"></i></a>
 			</div>
+{{else}}
+			<div class="col-lg-9 col-md-9 col-sm-6 col-xs-6">
+				<h1 >{{currentUser.profile.username}}</h1>
+				<p>{{currentUser.emails}}</p>
+				<a href="#" class="formatting"><i class="fa fa-pencil"></i></a>
+			</div>
+{{/if}}
 		</div>
+
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-xs-12 col-sm-12 post-message">
+	      		<form>
+					<div id="edit" data-name="message">
+	                </div>
+		      		<small>Revutskogo Str --- GEO</small>
+                	<button type="submit" value="Submit" class="pull-right">publication</button>
+	      		</form>
+	      </div>
+			<div class="col-lg-12 col-md-12 col-xs-12 col-sm-12 post-message">
+	      		<p>Товарищи! начало повседневной работы по формированию позиции требуют от нас анализа направлений прогрессивного развития. С другой стороны консультация с широким активом обеспечивает широкому кругу (специалистов) участие в формировании форм развития. Повседневная практика показывает, что постоянный количественный рост и сфера нашей активности в значительной степени обуславливает создание модели развития. Идейные соображения высшего порядка, а также новая модель организационной деятельности позволяет выполнять важные задания по разработке позиций, занимаемых участниками в отношении поставленных задач.</p>
+	      		<small>Revutskogo Str</small>
+	      	</div>
+	      <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12 post-message">
+	      		<p>Товарищи! начало повседневной работы по формированию позиции требуют от нас анализа направлений прогрессивного развития. С другой стороны консультация с широким активом обеспечивает широкому кругу (специалистов) участие в формировании форм развития. Повседневная практика показывает, что постоянный количественный рост и сфера нашей активности в значительной степени обуславливает создание модели развития. Идейные соображения высшего порядка, а также новая модель организационной деятельности позволяет выполнять важные задания по разработке позиций, занимаемых участниками в отношении поставленных задач.</p>
+	      		<small>Revutskogo Str</small>
+	      </div>
+	      </div>
 	</div>
 </template>
