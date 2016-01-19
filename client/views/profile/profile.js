@@ -10,9 +10,15 @@ Template.profileView.helpers({
             return this.profile;
         }
     },
+    userName: function(){
+        return Meteor.user().profile.username;
+    },
     messages: function() {
     return Messages.find();
   },
+    userAddress: function(){
+        return Meteor.user().emails[0].address;
+    },
 
 });
 
