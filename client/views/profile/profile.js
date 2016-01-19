@@ -22,7 +22,6 @@ Template.profileView.helpers({
     userAddress: function(){
         return Meteor.user().emails[0].address;
     },
-
 });
 
 Template.profileView.events({
@@ -44,6 +43,7 @@ Template.profileView.events({
         e.preventDefault();
         Messages.insert({
             text: $(e.target).find('[data-name=text]').summernote('code'),
+            locationM: Meteor.user().profile.location,
             owner: Meteor.userId(),
         });
             $('#edit').summernote('reset')
