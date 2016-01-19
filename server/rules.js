@@ -3,3 +3,6 @@ Messages.allow({
 		return true;
 	}
 })
+// Meteor.user.allow({
+	
+// })

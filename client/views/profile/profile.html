@@ -10,10 +10,13 @@
 			
 {{#if editProfile}}
 			<div class="col-lg-9 col-md-9 col-sm-6 col-xs-6">
-				<input type="text" name="username" value="{{currentUser.profile.username}}">
-				<input type="text" name="emails" value="{{currentUser.emails}}">
-				<input type="text" name="username" value="{{currentUser.profile.username}}">
-				<a href="#" class="save-data"><i class="fa fa-floppy-o"></i></a>
+				<form>
+					<input id="username" type="text" name="username" value="{{userName}}">
+					<input id="emails" type="text" name="emails" value="{{userAddress}}">
+					<input type="text" name="" value="">
+					<a href="#" class="save-data"><i class="fa fa-floppy-o"></i></a>
+
+				</form>
 			</div>
 {{else}}
 			<div class="col-lg-9 col-md-9 col-sm-6 col-xs-6">

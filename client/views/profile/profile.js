@@ -29,10 +29,13 @@ Template.profileView.events({
     },
     'click .save-data': function (e) {
         e.preventDefault();
-        var data = {};
-        data.username = Meteor.user().profile.username;
+        Meteor.users.update({_id:Meteor.user()._id}, {
+            $set:{"profile.username": $('#username').val(),
+            
+        }});
+
         Session.set('editProfile', false);
-        Meteor.users.update(Meteor.userId(), {$set: {profile: data}});
+        
     },
     'submit form': function(e){
         e.preventDefault();
