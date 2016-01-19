@@ -9,19 +9,34 @@
 
 			
 {{#if editProfile}}
-			<div class="col-lg-9 col-md-9 col-sm-6 col-xs-6">
+			<div class="col-lg-9 col-md-9 col-sm-6 col-xs-6 edit-info">
 				<form>
-					<input id="username" type="text" name="username" value="{{userName}}">
-					<input id="emails" type="text" name="emails" value="{{userAddress}}">
-					<input type="text" name="" value="">
-					<a href="#" class="save-data"><i class="fa fa-floppy-o"></i></a>
-
+					<ul>
+						Personal details
+						<li><input id="username" type="text" name="username" value="{{userName}}"></li>
+						<li><input id="emails" type="text" name="emails" value="{{userAddress}}"></li>
+						Change password
+						<li><input type="password" name="pass0" value=""></li>
+						<li><input type="password" name="pass1" value=""></li>
+						Location
+						<li>
+							<select name="userLocation">
+								<option value="Lviv">Lviv</option>
+								<option value="NY">NY</option>
+								<option value="Kiev">Kiev</option>
+								<option value="London">London</option>
+							</select>
+						</li>
+						
+						<a href="#" class="save-data"><i class="fa fa-floppy-o"></i></a>
+					</ul>
 				</form>
 			</div>
 {{else}}
 			<div class="col-lg-9 col-md-9 col-sm-6 col-xs-6">
 				<h1 >{{userName}}</h1>
 				<p>{{userAddress}}</p>
+				<p>{{userLocation}}</p>
 				<a href="#" class="formatting"><i class="fa fa-pencil"></i></a>
 			</div>
 {{/if}}
