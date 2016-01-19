@@ -14,6 +14,9 @@ Template.profileView.helpers({
         return Meteor.user().profile.username;
     },
     messages: function() {
+        if(Meteor.user()){
+            Meteor.subscribe('messages', Meteor.user().profile.location);
+        }
     return Messages.find();
   },
     userLocation: function(){
@@ -55,3 +58,6 @@ Template.profileView.events({
 Template.profileView.onRendered(function () {
         $('#edit').summernote();
 });
+Template.profileView.onDestroyed(function(){
+    $('#edit').summernote('disable');
+})
