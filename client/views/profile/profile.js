@@ -10,6 +10,10 @@ Template.profileView.helpers({
             return this.profile;
         }
     },
+    messages: function() {
+    return Messages.find();
+  },
+
 });
 
 Template.profileView.events({
@@ -26,12 +30,15 @@ Template.profileView.events({
     },
     'submit form': function(e){
         e.preventDefault();
-        var post = {
-            message: $(e.target).find('[data-name=message]').summernote('code'),
+        Messages.insert({
+            text: $(e.target).find('[data-name=text]').summernote('code'),
             owner: Meteor.userId(),
-        }
+        });
+            $('#edit').summernote('reset')
     },
+
 });
+
 
 Template.profileView.onRendered(function () {
         $('#edit').summernote();
