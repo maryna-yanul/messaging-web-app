@@ -16,6 +16,9 @@ Template.profileView.helpers({
     messages: function() {
     return Messages.find();
   },
+    userLocation: function(){
+    return Meteor.user().profile.location;
+  },
     userAddress: function(){
         return Meteor.user().emails[0].address;
     },
@@ -31,7 +34,7 @@ Template.profileView.events({
         e.preventDefault();
         Meteor.users.update({_id:Meteor.user()._id}, {
             $set:{"profile.username": $('#username').val(),
-            
+            "profile.location":$('#location').val(),
         }});
 
         Session.set('editProfile', false);
