@@ -14,14 +14,11 @@ Template.profileView.helpers({
         return Meteor.user().profile.username;
     },
     messages: function() {
-        if(Meteor.user()){
-            Meteor.subscribe('messages', Meteor.user().profile.location);
-        }
-    return Messages.find();
-  },
+        return Messages.find();
+    },
     userLocation: function(){
-    return Meteor.user().profile.location;
-  },
+        return Meteor.user().profile.location;
+    },
     userAddress: function(){
         return Meteor.user().emails[0].address;
     },
@@ -60,10 +57,16 @@ Template.profileView.events({
 
 });
 
-
 Template.profileView.onRendered(function () {
-        $('#edit').summernote();
+    $('#edit').summernote();
+    Session.set('inProfile', true);
+    
 });
 Template.profileView.onDestroyed(function(){
     $('#edit').summernote('disable');
+    Session.set('inProfile', false);
+})
+Tracker.autorun(function(){
+        Meteor.subscribe('profileMessages', Meteor.userId(), Session.get('inProfile'));
+    
 })

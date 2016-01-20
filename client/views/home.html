@@ -2,7 +2,7 @@
   {{>headerView}}
   <div class="container">
     <div class="row filter">
-      I`m here:
+      Select location:
       <select id="filterLocation">
         <option value="Lviv">Lviv</option>
         <option value="NY">NY</option>
@@ -12,7 +12,7 @@
     </div>
 
     <div class="row posts">
-    {{#each filterLocation}}
+    {{#each messages}}
       <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12 post-message">
             <p>{{text}}</p>
             <small>{{locationM}}</small>

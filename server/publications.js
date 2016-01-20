@@ -1,6 +1,14 @@
-Meteor.publish('messages', function (location) {
-    return Messages.find({'locationM': location});
+Meteor.publish('messages', function (location, inHome) {
+	if(!inHome){
+		return false;
+	}
+    return !location ? Messages.find({}) : Messages.find({'locationM': location});
+
 });
-// Meteor.publish('filterLocation', function (locationO) {
-//     return Messages.find({'locationM': locationO});
-// });
+Meteor.publish('profileMessages', function (owner, inProfile) {
+	console.log(inProfile)
+	if(!inProfile){
+		return false;
+	}
+    return Messages.find({'owner': owner});
+});

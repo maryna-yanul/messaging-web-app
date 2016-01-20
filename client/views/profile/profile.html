@@ -48,7 +48,7 @@
 					<div id="edit" data-name="text">
 	                </div>
 		      		<small>{{userLocation}}</small>
-                	<button type="submit" value="Submit" class="pull-right">publication</button>
+                	<button type="submit" value="Submit" class="pull-right click-push">publication</button>
 	      		</form>
 	      	</div>
 
@@ -61,6 +61,6 @@
 	      </div>
 	</div>
 	{{else}}
-	{{>userloginView}}
+	{{pathFor 'userloginView'}}
 	{{/if}}
 </template>
