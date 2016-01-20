@@ -38,10 +38,16 @@ Template.profileView.events({
             $set:{"profile.username": $('#username').val(),
             "profile.location":$('#location').val(),
         }});
-
         Session.set('editProfile', false);
-        
+
+        var oldPassword = $('#oldPassword').val();
+        var newPassword = $('#newPassword').val();
+
+        Accounts.changePassword(oldPassword, newPassword, function(err, res){
+            console.log(res, err);
+        });
     },
+
     'submit form': function(e){
         e.preventDefault();
         Messages.insert({
