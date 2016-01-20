@@ -3,7 +3,7 @@ Template.profileView.helpers({
         return Session.get('editProfile') || false;
     },
     curentProfile: function () {
-        return Meteor.userId() == this._id
+        return Meteor.userId() == this._id;
     },
     profile: function () {
         if (Meteor.user()) {
@@ -47,7 +47,7 @@ Template.profileView.events({
 
     'submit form': function(e){
         e.preventDefault();
-        Messages.insert({
+            Messages.insert({
             text: $(e.target).find('[data-name=text]').summernote('code'),
             locationM: Meteor.user().profile.location,
             owner: Meteor.userId(),
